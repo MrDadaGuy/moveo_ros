@@ -22,7 +22,7 @@
   <arg name="gazebo_gui" default="true"/>
   <arg name="paused" default="false"/>
   <!-- By default, use the urdf location provided from the package -->
-  <arg name="urdf_path" default="$(find rbx1_urdf)/urdf/moveo_urdf.urdf"/>
+  <arg name="urdf_path" default="$(find rbx1_urdf)/urdf/rbx1_urdf.urdf"/>
 
   <!-- launch the gazebo simulator and spawn the robot -->
   <include file="$(find rbx1_moveit_config)/launch/gazebo.launch" >

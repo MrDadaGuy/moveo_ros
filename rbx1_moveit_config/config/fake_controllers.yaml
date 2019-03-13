@@ -1,5 +1,8 @@
 controller_list:
-  - name: fake_rbx1_arm_controller
+  - name: fake_gripper_controller
+    joints:
+      - Joint_Grip_Servo
+  - name: fake_arm_controller
     joints:
       - Joint_1
       - Joint_2
@@ -7,6 +10,3 @@ controller_list:
       - Joint_4
       - Joint_5
       - Joint_6
-  - name: fake_hand_controller
-    joints:
-      - Joint_Grip_Servo
