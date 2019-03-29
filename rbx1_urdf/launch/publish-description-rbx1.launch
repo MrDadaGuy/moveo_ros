@@ -1,0 +1,17 @@
+<launch>
+
+	<include file="$(find file_server)/launch/ros_sharp_communication.launch">
+		<arg name="port" value="9090" />
+	</include>
+
+	<!--arg name="base" default="$(env TURTLEBOT_BASE)" />
+	<arg name="stacks" default="$(env TURTLEBOT_STACKS)" />
+	<arg name="3d_sensor" default="$(env TURTLEBOT_3D_SENSOR)" /-->
+
+    <!-- /home/modsim/catkin_ws/src/moveo_ros/rbx1_urdf/urdf/rbx1_urdf.urdf /-->
+	<arg name="urdf_file" default="$(find rbx1_urdf)/urdf/rbx1_urdf.urdf" />
+	
+	<param name="robot/name" value="rbx1" />
+	<param name="robot_description" command="$(arg urdf_file)" />
+
+</launch>
