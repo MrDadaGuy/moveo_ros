@@ -23,9 +23,27 @@ joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 50
 controller_list:
-  []
+ - name: ""
+   action_ns: follow_joint_trajectory
+   type: FollowJointTrajectory
+   default: true
+   joints:
+     - Joint_1
+     - Joint_2
+     - Joint_3
+     - Joint_4
+     - Joint_5
+     - Joint_6
+ - name: rbx1_grip_controller
+   action_ns: gripper_action
+   type: GripperCommand
+   default: true
+   parallel: true
+   joints:
+     - Joint_Grip_Servo
+     - Joint_Tip_Servo
 arm_position_controller:
-  type: position_controllers/JointPositionController
+  type: position_controllers/JointTrajectoryController
   joints:
     - Joint_1
     - Joint_2
@@ -65,7 +83,7 @@ arm_position_controller:
       i: 1
       i_clamp: 1
 gripper_controller:
-  type: position_controllers/JointPositionController
+  type: position_controllers/JointTrajectoryController
   joints:
     Joint_Grip_Servo
   gains:
